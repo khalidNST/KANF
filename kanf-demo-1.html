@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KANF | كَنَف</title>
+<style>
+:root{--p:#148f83;--pd:#0f766e;--ps:#e7f8f5;--a:#f28c38;--ad:#d96f1e;--bg:#fbfefd;--s:#fff;--b:#dce8e7;--t:#173331;--m:#5f7270;--r:22px;--scale:1}
+*{box-sizing:border-box}body{margin:0;font-family:Tahoma,Arial,sans-serif;background:var(--bg);color:var(--t);font-size:calc(17px*var(--scale));line-height:1.75}body.big{--scale:1.2}body.huge{--scale:1.38}
+button,input,select,textarea{font-family:inherit;font-size:1rem}.top{position:sticky;top:0;z-index:9;background:rgba(255,255,255,.96);border-bottom:1px solid var(--b);backdrop-filter:blur(12px)}
+.wrap{max-width:1200px;margin:auto;padding:12px 16px}.nav{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center}.brand{display:flex;gap:10px;align-items:center;cursor:pointer}.mark{width:48px;height:48px;border-radius:16px;background:linear-gradient(135deg,var(--p),#55d6c2);color:white;display:grid;place-items:center;font-weight:900}
+.links{display:flex;gap:6px;justify-content:center;flex-wrap:wrap}.link,.btn{border:0;border-radius:999px;padding:10px 14px;cursor:pointer;font-weight:800}.link{background:transparent}.link:hover,.link.on{background:var(--ps);color:var(--pd)}
+.actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}.btn{min-height:44px}.primary{background:var(--p);color:white}.accent{background:var(--a);color:white}.soft{background:var(--ps);color:var(--pd)}.light{background:white;color:var(--pd);border:1px solid var(--b)}.danger{background:#ffecec;color:#c33}
+main{max-width:1200px;margin:auto;padding:22px 16px 60px}.page{display:none}.page.on{display:block;animation:f .2s ease}@keyframes f{from{opacity:.5;transform:translateY(6px)}to{opacity:1;transform:none}}
+.hero{background:radial-gradient(circle at top right,rgba(20,143,131,.18),transparent 35%),linear-gradient(135deg,#fff,#f0fbf8);border:1px solid var(--b);border-radius:32px;padding:38px;box-shadow:0 14px 35px rgba(20,143,131,.12)}
+.hero h1{margin:0;color:var(--pd);font-size:clamp(2rem,5vw,4rem);line-height:1.2}.muted{color:var(--m)}.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.section{margin-top:32px}.head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin-bottom:14px}.title{margin:0;color:var(--pd);font-size:1.7rem}
+.grid{display:grid;gap:16px}.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+.card{background:white;border:1px solid var(--b);border-radius:var(--r);box-shadow:0 8px 24px rgba(0,0,0,.04)}.pad{padding:18px}.note{padding:18px;display:flex;gap:12px}.badge{width:46px;height:46px;border-radius:16px;background:var(--ps);display:grid;place-items:center;color:var(--pd);font-weight:900}
+.visual{min-height:145px;border-radius:18px;background:linear-gradient(#fff,#f4faf9);border:1px solid var(--b);display:grid;place-items:center;overflow:hidden;cursor:pointer}.svg{width:100%;height:100%;max-height:230px}.price{color:var(--ad);font-weight:900;font-size:1.15rem}.tag{display:inline-block;padding:4px 9px;border-radius:999px;background:var(--ps);color:var(--pd);font-weight:800;font-size:.84rem}
+.prod{padding:13px;display:flex;flex-direction:column;gap:10px}.prod h3{margin:0;color:var(--pd)}.prod p{margin:0;color:var(--m)}.prod:hover{transform:translateY(-3px);box-shadow:0 14px 35px rgba(20,143,131,.12)}
+.filters{display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:10px;background:white;border:1px solid var(--b);border-radius:var(--r);padding:14px;margin-bottom:16px}.field{width:100%;min-height:48px;border:1px solid var(--b);border-radius:16px;padding:10px;background:white}
+.details{display:grid;grid-template-columns:.9fr 1.1fr;gap:18px}.bigvisual{min-height:380px;padding:25px}.bigvisual .svg{max-height:340px}ul{padding:0;list-style:none}li{background:#f3f7f7;border:1px solid var(--b);padding:10px;border-radius:14px;margin:8px 0}
+table{width:100%;border-collapse:collapse;min-width:720px}th,td{padding:13px;border-bottom:1px solid var(--b);text-align:right;vertical-align:top}th{background:var(--ps);color:var(--pd)}.table{overflow-x:auto}
+.cartitem{display:grid;grid-template-columns:110px 1fr auto;gap:12px;align-items:center;padding:12px;border-bottom:1px solid var(--b)}.mini{height:90px}.summary{padding:18px;position:sticky;top:90px}.line{display:flex;justify-content:space-between;border-bottom:1px dashed var(--b);padding:8px 0}.total{font-size:1.2rem;font-weight:900;color:var(--pd)}
+.toast{position:fixed;right:16px;bottom:16px;background:var(--pd);color:white;padding:12px 16px;border-radius:16px;display:none;z-index:20}.toast.show{display:block}.modalBg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.42);z-index:19;padding:18px;place-items:center}.modalBg.show{display:grid}.modal{background:white;border-radius:26px;padding:22px;width:min(650px,100%);max-height:90vh;overflow:auto}
+footer{text-align:center;color:var(--m);padding:24px;border-top:1px solid var(--b);background:white}
+@media(max-width:950px){.nav{grid-template-columns:1fr}.links,.actions{justify-content:flex-start}.g4,.g3{grid-template-columns:repeat(2,1fr)}.filters,.details,.g2{grid-template-columns:1fr}.summary{position:static}}
+@media(max-width:650px){main,.wrap{padding-inline:12px}.hero{padding:24px}.g4,.g3{grid-template-columns:1fr}.cartitem{grid-template-columns:1fr}.btn{width:100%;white-space:normal}.row{width:100%}}
+
+/* تحسين تجربة الجوال: القائمة العلوية مختصرة والتنقل الأساسي بالأسفل */
+.menuBtn{display:none}
+.bottomNav{display:none}
+@media(max-width:650px){
+  body{padding-bottom:78px}
+  .top{box-shadow:0 8px 24px rgba(0,0,0,.08)}
+  .nav{grid-template-columns:1fr auto;gap:8px;align-items:center}
+  .brand{min-width:0}
+  .brand b{font-size:1.05rem}
+  .brand span{font-size:.78rem}
+  .mark{width:42px;height:42px;border-radius:14px}
+  .actions{grid-column:auto;justify-content:flex-end;gap:6px}
+  .menuBtn{display:inline-flex;width:44px;min-height:42px;padding:8px}
+  .fontBtn{width:auto;min-height:42px;padding:8px 10px;font-size:.88rem}
+  .desktopAction{display:none}
+  .links{
+    display:none;
+    grid-column:1 / -1;
+    background:#fff;
+    border:1px solid var(--b);
+    border-radius:18px;
+    padding:10px;
+    margin-top:8px;
+    box-shadow:0 14px 35px rgba(0,0,0,.10);
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+  }
+  body.menuOpen .links{display:grid}
+  .link{background:var(--ps);min-height:44px;border-radius:14px;padding:8px;font-size:.95rem}
+  .hero{margin-top:10px}
+  .hero h1{font-size:2.05rem}
+  .head{gap:8px}
+  .title{font-size:1.55rem}
+  main{padding-top:14px;padding-bottom:96px}
+  .bottomNav{
+    position:fixed;
+    left:10px;
+    right:10px;
+    bottom:10px;
+    z-index:30;
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:4px;
+    padding:8px;
+    background:rgba(255,255,255,.96);
+    border:1px solid var(--b);
+    border-radius:24px;
+    box-shadow:0 16px 45px rgba(0,0,0,.18);
+    backdrop-filter:blur(12px);
+  }
+  .bn{
+    border:0;
+    background:transparent;
+    color:var(--m);
+    border-radius:18px;
+    padding:6px 2px;
+    min-height:54px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:2px;
+    font-family:inherit;
+  }
+  .bn span{font-size:1.05rem;line-height:1}
+  .bn b{font-size:.72rem;line-height:1.2}
+  .bn.on{background:var(--ps);color:var(--pd)}
+}
+
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap nav"><div class="brand" onclick="go('home')"><div class="mark">ك</div><div><b>KANF | كَنَف</b><br><span class="muted">مستلزمات طبية منزلية بسهولة</span></div></div><nav class="links" id="links"></nav><div class="actions"><button class="btn light menuBtn" onclick="document.body.classList.toggle('menuOpen')">☰</button><button class="btn soft fontBtn" onclick="font()">تكبير الخط</button><button class="btn primary desktopAction" onclick="go('wizard')">مساعد الاختيار</button><button class="btn accent desktopAction" onclick="go('subscriptions')">ابدأ الطلب الدوري</button></div></div></header>
+<main>
+<section id="home" class="page on"><div class="hero"><h1>كَنَف يسهّل عليك اختيار وشراء المستلزمات الطبية المنزلية</h1><p class="muted">منصة تساعد الأسر ومقدمي الرعاية على اختيار المنتج المناسب، مقارنة البدائل، وإعادة طلب الاحتياجات الطبية بشكل دوري دون عناء.</p><div class="row section"><button class="btn accent" onclick="go('products')">تسوق الآن</button><button class="btn primary" onclick="go('subscriptions')">ابدأ الطلب الدوري</button><button class="btn soft" onclick="go('wizard')">جرّب مساعد الاختيار</button></div><div class="grid g3 section"><div class="card note"><div class="badge">🔍</div><div><b>مقارنة واضحة</b><br><span class="muted">شرح مبسط للفرق بين المنتجات.</span></div></div><div class="card note"><div class="badge">🔄</div><div><b>إعادة طلب سهلة</b><br><span class="muted">تذكير قبل موعد الاحتياج المتكرر.</span></div></div><div class="card note"><div class="badge">👵</div><div><b>مناسب لكبار السن</b><br><span class="muted">خط واضح وأزرار كبيرة وتكبير خط.</span></div></div></div></div><div class="section head"><div><h2 class="title">تسوق حسب الاحتياج</h2><p class="muted">اختر الحالة أو نوع الرعاية.</p></div></div><div class="grid g3" id="needsHome"></div><div class="section head"><div><h2 class="title">منتجات مقترحة</h2><p class="muted">صور المنتجات مرسومة لتشبه وصف كل منتج.</p></div><button class="btn light" onclick="go('products')">كل المنتجات</button></div><div class="grid g4" id="homeProducts"></div></section>
+<section id="needs" class="page"><h1 class="title">حسب الاحتياج</h1><p class="muted">بطاقات مختصرة تساعد المستخدم يبدأ من حالته.</p><div class="grid g3 section" id="needsGrid"></div></section>
+<section id="products" class="page"><h1 class="title">المنتجات</h1><p class="muted">ابحث، فلتر، أضف للسلة، قارن، أو ابدأ طلبًا دوريًا.</p><div class="filters"><input id="q" class="field" placeholder="ابحث عن منتج..." oninput="renderProducts()"><select id="cat" class="field" onchange="renderProducts()"><option value="all">كل الفئات</option></select><select id="rec" class="field" onchange="renderProducts()"><option value="all">الطلب الدوري</option><option value="yes">يدعم</option><option value="no">لا يدعم</option></select><select id="sort" class="field" onchange="renderProducts()"><option value="featured">المقترح</option><option value="price">السعر الأقل</option><option value="popular">الأكثر طلبًا</option></select></div><div class="grid g4" id="productsGrid"></div></section>
+<section id="product" class="page"><button class="btn light" onclick="go('products')">← العودة للمنتجات</button><div id="productDetails" class="details section"></div></section>
+<section id="compare" class="page"><div class="head"><div><h1 class="title">المقارنة</h1><p class="muted">أضف منتجات من صفحة المنتجات للمقارنة.</p></div><button class="btn light" onclick="cmp=[];save();renderCompare()">مسح المقارنة</button></div><div id="compareBox"></div><div class="card pad section"><h2 class="title">اسأل الذكاء الاصطناعي</h2><input id="aiq" class="field" placeholder="مثال: أيهم أفضل لكبير سن قليل الحركة؟"><br><br><button class="btn primary" onclick="aiAnswer()">اسأل</button><div id="aia" class="section"></div></div></section>
+<section id="cart" class="page"><h1 class="title">السلة / قائمة الشراء</h1><div class="details section"><div class="card" id="cartItems"></div><aside class="card summary" id="cartSum"></aside></div></section>
+<section id="checkout" class="page"><h1 class="title">الدفع</h1><div class="details section"><div class="card pad"><h2>بيانات التوصيل والدفع</h2><input class="field" value="خالد"><br><br><input class="field" value="05xxxxxxxx"><br><br><input class="field" value="الرياض، حي الياسمين"><br><br><select class="field"><option>الدفع عند الاستلام</option><option>بطاقة مدى</option></select><br><br><button class="btn accent" onclick="confirmOrder()">تأكيد الطلب</button></div><aside class="card summary" id="checkoutSum"></aside></div></section>
+<section id="success" class="page"><div class="card pad" style="text-align:center"><div class="badge" style="margin:auto;width:76px;height:76px;font-size:2rem">✓</div><h1 class="title">تم إنشاء الطلب بنجاح</h1><p class="muted">رقم الطلب: <b id="orderNo">#KANF-1008</b></p><button class="btn primary" onclick="go('orders')">عرض الطلبات السابقة</button></div></section>
+<section id="account" class="page"><h1 class="title">حسابي</h1><div class="grid g3 section"><div class="card pad" onclick="info('بيانات المستخدم','الاسم: خالد<br>الجوال: 05xxxxxxxx<br>البريد: gkhald342@gmail.com')"><h3>بيانات المستخدم</h3><p>الاسم والجوال والبريد</p></div><div class="card pad" onclick="go('orders')"><h3>الطلبات السابقة</h3><p>عرض وإعادة الطلب</p></div><div class="card pad" onclick="go('subscriptions')"><h3>الطلبات الدورية</h3><p>تعديل وإيقاف الاشتراكات</p></div><div class="card pad" onclick="go('admin')"><h3>لوحة الإدارة</h3><p>إدارة المنتجات والطلبات</p></div><div class="card pad" onclick="go('login')"><h3>تسجيل الخروج</h3><p>العودة لتسجيل الدخول</p></div></div></section>
+<section id="orders" class="page"><h1 class="title">الطلبات السابقة</h1><div class="grid g2 section" id="ordersGrid"></div></section>
+<section id="subscriptions" class="page"><div class="head"><div><h1 class="title">الطلب الدوري / الاشتراكات</h1><p class="muted">تذكير قبل الطلب بثلاثة أيام وقبل الموعد بيوم.</p></div><button class="btn accent" onclick="subModal()">إنشاء طلب دوري</button></div><div class="grid g2 section" id="subsGrid"></div></section>
+<section id="wizard" class="page"><h1 class="title">مساعد الاختيار الذكي</h1><div class="card pad section" id="wiz"></div></section>
+<section id="admin" class="page"><h1 class="title">لوحة الإدارة</h1><div class="grid g4 section"><div class="card pad"><h3>إدارة المنتجات</h3><p>10 منتجات</p></div><div class="card pad"><h3>إدارة الفئات</h3><p>كبار السن، الأمراض المزمنة...</p></div><div class="card pad"><h3>إدارة الطلبات</h3><p>128 طلب</p></div><div class="card pad"><h3>الطلبات الدورية</h3><p>34 اشتراك</p></div><div class="card pad"><h3>خبير كنف</h3><p>إدارة النصائح المبسطة</p></div></div></section>
+<section id="login" class="page"><div class="grid g2"><div class="card pad"><h1 class="title">تسجيل الدخول</h1><input class="field" placeholder="البريد أو الجوال"><br><br><input class="field" type="password" placeholder="كلمة المرور"><br><br><button class="btn primary" onclick="go('account')">دخول</button></div><div class="card pad"><h1 class="title">إنشاء حساب</h1><input class="field" placeholder="الاسم"><br><br><input class="field" placeholder="رقم الجوال"><br><br><button class="btn accent" onclick="go('account')">إنشاء حساب</button></div></div></section>
+</main>
+<nav class="bottomNav" aria-label="تنقل الجوال">
+  <button class="bn" data-bn="home" onclick="go('home')"><span>⌂</span><b>الرئيسية</b></button>
+  <button class="bn" data-bn="products" onclick="go('products')"><span>▦</span><b>المنتجات</b></button>
+  <button class="bn" data-bn="wizard" onclick="go('wizard')"><span>؟</span><b>المساعد</b></button>
+  <button class="bn" data-bn="cart" onclick="go('cart')"><span>🛒</span><b>السلة</b></button>
+  <button class="bn" data-bn="account" onclick="go('account')"><span>☻</span><b>حسابي</b></button>
+</nav>
+
+<footer>KANF | كَنَف — نسخة عرض تفاعلية. جميع البيانات تجريبية.</footer><div id="toast" class="toast"></div><div id="modalBg" class="modalBg" onclick="if(event.target.id==='modalBg')hideModal()"><div id="modal" class="modal"></div></div>
+<script>
+const svgs={
+diaper:`<svg class="svg" viewBox="0 0 360 230"><rect x="42" y="38" width="276" height="154" rx="26" fill="#f6fbff" stroke="#148f83" stroke-width="5"/><path d="M86 70c42 34 146 34 188 0v92c-32 28-156 28-188 0z" fill="#dff5f1" stroke="#70cfc3" stroke-width="4"/><text x="180" y="177" text-anchor="middle" font-size="23" font-family="Tahoma" fill="#0f766e" font-weight="700">حفاضات كبار السن</text></svg>`,
+glucose:`<svg class="svg" viewBox="0 0 360 230"><rect x="128" y="34" width="104" height="166" rx="22" fill="#fff" stroke="#148f83" stroke-width="5"/><rect x="145" y="57" width="70" height="48" rx="8" fill="#e7f8f5"/><text x="180" y="89" text-anchor="middle" font-size="18" fill="#0f766e" font-weight="700">98</text><circle cx="180" cy="139" r="21" fill="#f28c38"/><path d="M245 61c25 22 32 50 19 84" stroke="#f28c38" stroke-width="8" fill="none" stroke-linecap="round"/></svg>`,
+strips:`<svg class="svg" viewBox="0 0 360 230"><rect x="70" y="44" width="138" height="144" rx="18" fill="#fff" stroke="#148f83" stroke-width="5"/><text x="139" y="126" text-anchor="middle" font-size="22" fill="#0f766e" font-weight="700">شرائط</text><g stroke="#f28c38" stroke-width="8" stroke-linecap="round"><line x1="230" y1="56" x2="288" y2="172"/><line x1="255" y1="55" x2="313" y2="171"/></g></svg>`,
+pressure:`<svg class="svg" viewBox="0 0 360 230"><rect x="116" y="64" width="128" height="112" rx="22" fill="#fff" stroke="#148f83" stroke-width="5"/><rect x="136" y="86" width="88" height="40" rx="8" fill="#e7f8f5"/><text x="180" y="114" text-anchor="middle" font-size="18" fill="#0f766e" font-weight="700">120/80</text><path d="M244 106h36c18 0 31 14 31 31v17" fill="none" stroke="#148f83" stroke-width="7"/></svg>`,
+wheelchair:`<svg class="svg" viewBox="0 0 360 230"><circle cx="139" cy="164" r="43" fill="#e7f8f5" stroke="#148f83" stroke-width="8"/><circle cx="261" cy="177" r="18" fill="#e7f8f5" stroke="#148f83" stroke-width="6"/><path d="M132 119h73l24 53h35" fill="none" stroke="#148f83" stroke-width="9" stroke-linecap="round"/><path d="M162 79h58v40h-74" fill="none" stroke="#f28c38" stroke-width="11" stroke-linecap="round"/><circle cx="151" cy="54" r="19" fill="#70cfc3"/></svg>`,
+walker:`<svg class="svg" viewBox="0 0 360 230"><path d="M105 52h150c16 0 29 13 29 29v88" fill="none" stroke="#148f83" stroke-width="10" stroke-linecap="round"/><path d="M105 52c-17 36-25 79-24 132M255 52c17 36 25 79 24 132" fill="none" stroke="#148f83" stroke-width="10" stroke-linecap="round"/><path d="M96 115h168" stroke="#70cfc3" stroke-width="9" stroke-linecap="round"/><circle cx="80" cy="190" r="13" fill="#f28c38"/><circle cx="280" cy="190" r="13" fill="#f28c38"/></svg>`,
+masks:`<svg class="svg" viewBox="0 0 360 230"><rect x="76" y="70" width="208" height="90" rx="26" fill="#e7f8f5" stroke="#148f83" stroke-width="5"/><path d="M98 95h164M98 116h164M98 137h164" stroke="#70cfc3" stroke-width="6" stroke-linecap="round"/><path d="M76 103c-28 0-38 54-4 57M284 103c28 0 38 54 4 57" fill="none" stroke="#f28c38" stroke-width="7"/></svg>`,
+gloves:`<svg class="svg" viewBox="0 0 360 230"><path d="M121 179V84c0-13 20-13 20 0v54V62c0-14 21-14 21 0v75V56c0-14 22-14 22 0v82V70c0-14 21-14 21 0v80l20-26c8-10 25 2 18 14l-35 61c-8 14-23 20-38 20h-11c-22 0-38-17-38-40z" fill="#e7f8f5" stroke="#148f83" stroke-width="5"/></svg>`,
+wipes:`<svg class="svg" viewBox="0 0 360 230"><rect x="70" y="83" width="220" height="100" rx="22" fill="#fff" stroke="#148f83" stroke-width="5"/><rect x="125" y="64" width="110" height="50" rx="20" fill="#e7f8f5" stroke="#70cfc3" stroke-width="4"/><text x="180" y="145" text-anchor="middle" font-size="22" fill="#0f766e" font-weight="700">معقمة</text></svg>`,
+pillow:`<svg class="svg" viewBox="0 0 360 230"><path d="M83 83c22-28 172-28 194 0 20 26 20 72 0 98-22 28-172 28-194 0-20-26-20-72 0-98z" fill="#f6fbff" stroke="#148f83" stroke-width="5"/><path d="M117 108c37 25 89 25 126 0" fill="none" stroke="#70cfc3" stroke-width="7" stroke-linecap="round"/></svg>`};
+const products=[
+{id:1,n:'حفاضات كبار السن',cat:'عناية كبار السن',need:'كبار السن',price:89,pop:98,rec:true,svg:'diaper',d:'حفاضات مريحة ومناسبة للاستخدام اليومي لكبار السن.',details:'مصممة للراحة اليومية والامتصاص الجيد، مناسبة للرعاية المنزلية المتكررة.',spec:['امتصاص عالي','عبوة 30 قطعة','مناسبة للاستخدام الليلي'],pro:['مناسبة للطلب الدوري','سهلة الاستخدام'],con:['تحتاج اختيار المقاس بدقة','استهلاكها متكرر']},
+{id:2,n:'جهاز قياس السكر',cat:'الأمراض المزمنة',need:'أمراض مزمنة',price:145,pop:84,rec:false,svg:'glucose',d:'جهاز منزلي لمتابعة مستوى السكر بسهولة.',details:'يساعد المستخدم على متابعة السكر في المنزل بقراءة واضحة وسريعة.',spec:['شاشة رقمية','ذاكرة قراءات','يحتاج شرائط قياس'],pro:['سهل الحمل','قراءة واضحة'],con:['لا يعمل بدون شرائط']},
+{id:3,n:'شرائط قياس السكر',cat:'الأمراض المزمنة',need:'أمراض مزمنة',price:59,pop:91,rec:true,svg:'strips',d:'شرائط متوافقة مع أجهزة قياس السكر المنزلية.',details:'منتج استهلاكي يتكرر شراؤه حسب عدد مرات القياس.',spec:['عبوة 50 شريط','تحتاج توافق الجهاز'],pro:['مناسبة للطلب الدوري'],con:['تنتهي بسرعة']},
+{id:4,n:'جهاز قياس الضغط',cat:'قياس ومتابعة',need:'أمراض مزمنة',price:179,pop:82,rec:false,svg:'pressure',d:'جهاز ضغط منزلي بشاشة واضحة وسوار ذراع.',details:'يساعد الأسرة على متابعة ضغط الدم في المنزل بطريقة مبسطة.',spec:['شاشة كبيرة','سوار ذراع'],pro:['مفيد لكبار السن'],con:['يحتاج وضعية صحيحة']},
+{id:5,n:'كرسي متحرك',cat:'المساعدة على الحركة',need:'حركة وتنقل',price:690,pop:76,rec:false,svg:'wheelchair',d:'كرسي متحرك منزلي للتنقل الآمن.',details:'مناسب للمستخدم الذي يحتاج مساعدة مستمرة أو مؤقتة في الحركة.',spec:['قابل للطي','مكابح يدوية','مساند قدم'],pro:['يعزز الاستقلالية'],con:['سعره أعلى من المشاية']},
+{id:6,n:'مشاية طبية',cat:'المساعدة على الحركة',need:'حركة وتنقل',price:220,pop:79,rec:false,svg:'walker',d:'مشاية تساعد كبار السن على الحركة بثبات.',details:'تعطي دعمًا أثناء المشي داخل المنزل وتقلل احتمال فقدان التوازن.',spec:['ارتفاع قابل للتعديل','مقابض مريحة'],pro:['اقتصادية','خفيفة'],con:['لا تناسب من لا يستطيع الوقوف']},
+{id:7,n:'كمامات طبية',cat:'التعقيم والحماية',need:'تعقيم وحماية',price:25,pop:88,rec:true,svg:'masks',d:'كمامات طبية للاستخدام اليومي والحماية.',details:'منتج استهلاكي مناسب للعائلة ومقدمي الرعاية.',spec:['عبوة 50 كمامة','ثلاث طبقات'],pro:['سعر مناسب','مناسبة للاشتراك'],con:['استخدام مرة واحدة']},
+{id:8,n:'قفازات طبية',cat:'التعقيم والحماية',need:'تعقيم وحماية',price:34,pop:86,rec:true,svg:'gloves',d:'قفازات للاستخدام الطبي والمنزلي الآمن.',details:'مناسبة لمقدمي الرعاية أثناء التعامل مع منتجات العناية اليومية.',spec:['عبوة 100 قفاز','خالية من البودرة'],pro:['تحافظ على النظافة'],con:['تحتاج تحديد المقاس']},
+{id:9,n:'مناديل طبية معقمة',cat:'العناية اليومية',need:'عناية يومية',price:18,pop:90,rec:true,svg:'wipes',d:'مناديل معقمة للاستخدام اليومي في الرعاية المنزلية.',details:'تساعد على تنظيف الأسطح أو اليدين أو أدوات الرعاية بشكل سريع.',spec:['عبوة 80 منديل','تعقيم سريع'],pro:['رخيصة ومتكررة'],con:['تنتهي بسرعة']},
+{id:10,n:'وسادة طبية داعمة',cat:'الراحة والعناية المنزلية',need:'كبار السن',price:120,pop:72,rec:false,svg:'pillow',d:'وسادة داعمة للراحة وتقليل الضغط.',details:'تساعد في تحسين الراحة لكبار السن أو المرضى الذين يقضون وقتًا طويلًا في السرير.',spec:['تصميم داعم','غطاء قابل للإزالة'],pro:['تحسن الراحة'],con:['لا تدعم الطلب الدوري']}];
+const needs=[['احتياجات كبار السن','حفاضات، عناية يومية، منتجات راحة منزلية.','diaper','كبار السن'],['العناية اليومية','مناديل معقمة وقفازات ومنتجات نظافة.','wipes','عناية يومية'],['الأمراض المزمنة','قياس السكر والضغط ومستلزمات المتابعة.','glucose','أمراض مزمنة'],['المساعدة على الحركة','كرسي متحرك ومشاية طبية.','wheelchair','حركة وتنقل'],['التعقيم والحماية','كمامات وقفازات ومنتجات حماية.','masks','تعقيم وحماية']];
+let cart=JSON.parse(localStorage.kanfCart||'[]'), cmp=JSON.parse(localStorage.kanfCmp||'[]'), subs=JSON.parse(localStorage.kanfSubs||'null')||[{p:'حفاضات كبار السن',q:2,f:'شهري',next:'2026-05-05',st:'نشط'},{p:'كمامات طبية',q:1,f:'كل 30 يوم',next:'2026-05-11',st:'نشط'}], orders=JSON.parse(localStorage.kanfOrders||'null')||[{no:'#KANF-1001',date:'2026-04-02',p:'حفاضات كبار السن، مناديل طبية معقمة',total:125,st:'تم التسليم'}];
+const pages=['home','products','needs','compare','subscriptions','cart','account'];const names={home:'الرئيسية',products:'المنتجات',needs:'حسب الاحتياج',compare:'المقارنة',subscriptions:'الطلب الدوري',cart:'السلة',account:'حسابي'};
+links.innerHTML=pages.map(p=>`<button class="link" id="l${p}" onclick="go('${p}')">${names[p]}${p=='cart'?` <span class="cart-count" id="cc">0</span>`:''}</button>`).join('');
+function save(){localStorage.kanfCart=JSON.stringify(cart);localStorage.kanfCmp=JSON.stringify(cmp);localStorage.kanfSubs=JSON.stringify(subs);localStorage.kanfOrders=JSON.stringify(orders);count()}
+function count(){let n=cart.reduce((s,i)=>s+i.q,0);let e=document.getElementById('cc');if(e)e.textContent=n}
+function go(p){document.querySelectorAll('.page').forEach(x=>x.classList.remove('on'));document.getElementById(p).classList.add('on');document.querySelectorAll('.link').forEach(x=>x.classList.remove('on'));let l=document.getElementById('l'+p);if(l)l.classList.add('on');document.querySelectorAll('.bn').forEach(x=>x.classList.toggle('on',x.dataset.bn===p));document.body.classList.remove('menuOpen');location.hash=p;scrollTo(0,0); if(p=='products')renderProducts();if(p=='cart')renderCart();if(p=='compare')renderCompare();if(p=='checkout')checkout();if(p=='orders')renderOrders();if(p=='subscriptions')renderSubs();if(p=='wizard')wizard()}
+function toast(t){toastEl=document.getElementById('toast');toastEl.textContent=t;toastEl.classList.add('show');setTimeout(()=>toastEl.classList.remove('show'),2200)}
+function font(){let b=document.body;if(!b.classList.contains('big')&&!b.classList.contains('huge'))b.classList.add('big');else if(b.classList.contains('big')){b.classList.remove('big');b.classList.add('huge')}else b.classList.remove('huge')}
+function img(p){return svgs[p.svg]}function prodCard(p){return `<div class="card prod"><div class="visual" onclick="openP(${p.id})">${img(p)}</div><h3>${p.n}</h3><p>${p.d}</p><div><span class="price">${p.price} ر.س</span> <span class="tag">${p.rec?'يدعم الطلب الدوري':'شراء مرة واحدة'}</span></div><div class="row"><button class="btn accent" onclick="addCart(${p.id})">أضف للسلة</button><button class="btn soft" onclick="addCmp(${p.id})">قارن</button><button class="btn light" onclick="openP(${p.id})">تفاصيل</button>${p.rec?`<button class="btn primary" onclick="createSub('${p.n}')">طلب دوري</button>`:''}</div></div>`}
+function init(){needsHome.innerHTML=needs.map(n=>`<div class="card prod" onclick="filterNeed('${n[3]}')"><div class="visual">${svgs[n[2]]}</div><h3>${n[0]}</h3><p>${n[1]}</p></div>`).join('');needsGrid.innerHTML=needsHome.innerHTML;homeProducts.innerHTML=products.slice(0,8).map(prodCard).join('');cat.innerHTML+=Array.from(new Set(products.map(p=>p.cat))).map(c=>`<option>${c}</option>`).join('');renderProducts();renderOrders();renderSubs();count();go(location.hash.replace('#','')||'home')}
+function renderProducts(){let v=q.value.trim(),c=cat.value,r=rec.value,s=sort.value;let list=products.filter(p=>(!v||p.n.includes(v)||p.cat.includes(v)||p.d.includes(v))&&(c=='all'||p.cat==c)&&(r=='all'||(r=='yes'?p.rec:!p.rec)));if(s=='price')list.sort((a,b)=>a.price-b.price);if(s=='popular')list.sort((a,b)=>b.pop-a.pop);productsGrid.innerHTML=list.map(prodCard).join('')||'<div class="card pad">لا توجد نتائج</div>'}
+function filterNeed(n){go('products');q.value=n;renderProducts()}
+function get(id){return products.find(p=>p.id==id||p.n==id)}function openP(id){let p=get(id);productDetails.innerHTML=`<div class="card visual bigvisual">${img(p)}</div><div class="card pad"><h1 class="title">${p.n}</h1><p class="price">${p.price} ر.س</p><p>${p.details}</p><p><span class="tag">${p.rec?'يدعم الطلب الدوري':'لا يدعم الطلب الدوري'}</span></p><div class="row"><button class="btn accent" onclick="addCart(${p.id})">أضف للسلة</button><button class="btn soft" onclick="addCmp(${p.id})">أضف للمقارنة</button><button class="btn primary" onclick="${p.rec?`createSub('${p.n}')`:`toast('هذا المنتج لا يدعم الطلب الدوري')`}">ابدأ طلب دوري</button></div><h2>المواصفات</h2><ul>${p.spec.map(x=>`<li>${x}</li>`).join('')}</ul><h2>نقاط القوة</h2><ul>${p.pro.map(x=>`<li>✓ ${x}</li>`).join('')}</ul><h2>نقاط الضعف</h2><ul>${p.con.map(x=>`<li>• ${x}</li>`).join('')}</ul><div class="card pad" style="background:var(--ps)"><h2>رأي خبير كنف</h2><p>اختر المنتج حسب تكرار الحاجة وحالة المستخدم وليس حسب السعر فقط.</p></div></div>`;go('product')}
+function addCart(id){let i=cart.find(x=>x.id==id);i?i.q++:cart.push({id,q:1});save();toast('تمت الإضافة للسلة')}
+function addCmp(id){if(!cmp.includes(id))cmp.push(id);save();toast('تمت الإضافة للمقارنة')}
+function renderCompare(){let list=cmp.map(get).filter(Boolean);if(!list.length){compareBox.innerHTML='<div class="card pad">لا توجد منتجات في المقارنة. أضف منتجات من صفحة المنتجات.</div>';return}let rows=[['السعر',p=>p.price+' ر.س'],['الاستخدام المناسب',p=>p.need],['المواصفات',p=>p.spec.join('، ')],['نقاط القوة',p=>p.pro.join('، ')],['نقاط الضعف',p=>p.con.join('، ')],['الطلب الدوري',p=>p.rec?'نعم':'لا'],['التوصية',p=>p.rec?'مناسب للحالات المتكررة':p.price<250?'خيار اقتصادي':'مناسب للاحتياج المحدد']];compareBox.innerHTML=`<div class="table card"><table><tr><th>العنصر</th>${list.map(p=>`<th>${p.n}<br><button class="btn danger" onclick="cmp=cmp.filter(x=>x!=${p.id});save();renderCompare()">إزالة</button></th>`).join('')}</tr>${rows.map(r=>`<tr><td><b>${r[0]}</b></td>${list.map(p=>`<td>${r[1](p)}</td>`).join('')}</tr>`).join('')}</table></div>`}
+function aiAnswer(){let list=cmp.map(get).filter(Boolean);if(!list.length){aia.innerHTML='أضف منتجات أولًا.';return}let cheap=[...list].sort((a,b)=>a.price-b.price)[0], recp=list.find(p=>p.rec)||list[0];aia.innerHTML=`<div class="card note"><div class="badge">AI</div><div>إذا كان الهدف توفير المال فالأنسب ${cheap.n}. وإذا كان الاحتياج يتكرر فالأنسب ${recp.n}.</div></div>`}
+function renderCart(){if(!cart.length){cartItems.innerHTML='<div class="pad">السلة فارغة.</div>';cartSum.innerHTML='<h2>ملخص الطلب</h2>';return}cartItems.innerHTML=cart.map(i=>{let p=get(i.id);return `<div class="cartitem"><div class="visual mini">${img(p)}</div><div><h3>${p.n}</h3><p>${p.d}</p><b>${p.price} ر.س</b></div><div class="row"><button class="btn light" onclick="chg(${p.id},1)">+</button><b>${i.q}</b><button class="btn light" onclick="chg(${p.id},-1)">−</button><button class="btn danger" onclick="cart=cart.filter(x=>x.id!=${p.id});save();renderCart()">حذف</button></div></div>`}).join('');let sub=cart.reduce((s,i)=>s+get(i.id).price*i.q,0),ship=sub>250?0:20;cartSum.innerHTML=`<h2>ملخص الطلب</h2><div class="line"><span>المنتجات</span><b>${sub} ر.س</b></div><div class="line"><span>التوصيل</span><b>${ship} ر.س</b></div><div class="line total"><span>الإجمالي</span><b>${sub+ship} ر.س</b></div><br><button class="btn accent" onclick="go('checkout')">إتمام الشراء</button><br><br><button class="btn soft" onclick="cartSub()">تحويل إلى طلب دوري</button>`}
+function chg(id,d){let i=cart.find(x=>x.id==id);i.q+=d;if(i.q<=0)cart=cart.filter(x=>x.id!=id);save();renderCart()}
+function checkout(){let sub=cart.reduce((s,i)=>s+get(i.id).price*i.q,0),ship=sub>250?0:20;checkoutSum.innerHTML=cart.map(i=>`<div class="line"><span>${get(i.id).n} × ${i.q}</span><b>${get(i.id).price*i.q} ر.س</b></div>`).join('')+`<div class="line total"><span>الإجمالي</span><b>${sub+ship} ر.س</b></div>`}
+function confirmOrder(){if(!cart.length){toast('السلة فارغة');return}let no='#KANF-'+Math.floor(1000+Math.random()*9000);let total=cart.reduce((s,i)=>s+get(i.id).price*i.q,0);orders.unshift({no,date:new Date().toISOString().slice(0,10),p:cart.map(i=>get(i.id).n).join('، '),total,st:'قيد التجهيز'});cart=[];save();orderNo.textContent=no;go('success')}
+function renderOrders(){ordersGrid.innerHTML=orders.map(o=>`<div class="card pad"><h3>${o.no}</h3><p>التاريخ: ${o.date}</p><p>${o.p}</p><p>الإجمالي: ${o.total} ر.س</p><span class="tag">${o.st}</span><br><br><button class="btn accent" onclick="o.p.split('، ').forEach(n=>{let p=get(n);if(p)addCart(p.id)});go('cart')">إعادة نفس الطلب</button></div>`).join('')}
+function renderSubs(){subsGrid.innerHTML=subs.map((s,i)=>`<div class="card pad"><h3>${s.p}</h3><p>الكمية: ${s.q}</p><p>التكرار: ${s.f}</p><p>التنفيذ القادم: ${s.next}</p><span class="tag">${s.st}</span><br><br><button class="btn soft" onclick="s.st=s.st=='نشط'?'موقوف مؤقتًا':'نشط';save();renderSubs()">إيقاف مؤقت</button> <button class="btn danger" onclick="subs.splice(${i},1);save();renderSubs()">إلغاء</button></div>`).join('')}
+function subModal(name=''){modal.innerHTML=`<h2 class="title">إنشاء طلب دوري</h2><select id="sp" class="field">${products.filter(p=>p.rec).map(p=>`<option ${p.n==name?'selected':''}>${p.n}</option>`).join('')}</select><br><br><input id="sq" class="field" type="number" min="1" value="1"><br><br><select id="sf" class="field"><option>شهري</option><option>أسبوعي</option><option>كل 30 يوم</option></select><br><br><button class="btn accent" onclick="subs.unshift({p:sp.value,q:sq.value,f:sf.value,next:'2026-05-25',st:'نشط'});save();hideModal();go('subscriptions')">إنشاء</button>`;modalBg.classList.add('show')}
+function createSub(name){subModal(name)}function cartSub(){let p=cart.map(i=>get(i.id)).find(p=>p.rec);p?createSub(p.n):toast('لا توجد منتجات تدعم الطلب الدوري')}
+function info(t,h){modal.innerHTML=`<h2 class="title">${t}</h2><p>${h}</p><button class="btn primary" onclick="hideModal()">تم</button>`;modalBg.classList.add('show')}function hideModal(){modalBg.classList.remove('show')}
+let wi=0,ans={};const qs=[['for','لمن تشتري المنتج؟',['كبير سن','طفل','مريض مزمن','شخص يحتاج مساعدة حركة']],['need','ما نوع الاحتياج؟',['عناية يومية','قياس ومتابعة','حركة وتنقل','تعقيم وحماية']],['repeat','هل الشراء متكرر؟',['نعم','لا']],['freq','كم مرة تحتاج المنتج؟',['أسبوعيًا','شهريًا','حسب الحاجة']]];
+function wizard(){let q=qs[wi];wiz.innerHTML=`<p class="tag">السؤال ${wi+1} من ${qs.length}</p><h2>${q[1]}</h2><div class="grid g2">${q[2].map(o=>`<button class="card pad" style="text-align:right;font-weight:900" onclick="ans['${q[0]}']='${o}';wi<qs.length-1?(wi++,wizard()):wizResult()">${o}</button>`).join('')}</div><br><button class="btn light" onclick="wi=0;ans={};wizard()">إعادة البدء</button>`}
+function wizResult(){let sug=products;if(ans.for=='مريض مزمن'||ans.need=='قياس ومتابعة')sug=products.filter(p=>p.need=='أمراض مزمنة');else if(ans.for=='شخص يحتاج مساعدة حركة'||ans.need=='حركة وتنقل')sug=products.filter(p=>p.need=='حركة وتنقل');else if(ans.need=='تعقيم وحماية')sug=products.filter(p=>p.need=='تعقيم وحماية');else if(ans.for=='كبير سن')sug=products.filter(p=>p.need=='كبار السن');if(ans.repeat=='نعم')sug=sug.filter(p=>p.rec).concat(sug.filter(p=>!p.rec));wiz.innerHTML=`<h2 class="title">النتيجة المقترحة</h2><p class="muted">هذه المنتجات مناسبة حسب إجاباتك.</p><div class="grid g3">${sug.slice(0,3).map(prodCard).join('')}</div><br><button class="btn light" onclick="wi=0;ans={};wizard()">إعادة الأسئلة</button>`}
+init();
+</script>
+</body></html>
